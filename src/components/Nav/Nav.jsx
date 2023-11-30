@@ -26,7 +26,7 @@ const Nav = () => {
               <img src="http://assets.stickpng.com/images/580b57fcd9996e24bc43c529.png" alt="netflix-logo"
               className='nav-logo' />
         </Link>
-        <Link to="/login">
+        <Link to="/profile">
         <img
             src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
             alt="login-avatar"
