@@ -19,8 +19,9 @@ const Row = ({title,fetchUrl,isLargeRow=false}) => {
         }
        }
        fetchData();
-    })
-    console.log(movies)
+        // eslint-disable-next-line
+    },[])
+  
 
   return (
     <div className='row'>

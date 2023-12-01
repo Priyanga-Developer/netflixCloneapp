@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import "./SignUpScreen.css"
-import {createUserWithEmailAndPassword,signInWithEmailAndPassword} from "firebase/auth"
+import {createUserWithEmailAndPassword,signInWithEmailAndPassword ,updateProfile} from "firebase/auth"
 import {auth} from "../../firebase/config"
 
 const SignUpScreen = () => {
@@ -8,24 +8,36 @@ const SignUpScreen = () => {
   const [email,setEmail]=useState("");
   const [password,setPassword] =useState("");
   const [username,setUsername]=useState("");
+ 
 
   
-  const signUpfunction=async(e)=>{
-    e.preventdefault();
+  const signUpfunction=async()=>{
+  
     try{
-      await createUserWithEmailAndPassword(auth,email,password);
-      console.log(auth)
+       await createUserWithEmailAndPassword(auth,email,password);
+       
+      await updateProfile(auth.currentUser,{
+        displayName: username
+       })
+     
+ 
+     setEmail("");
+     setPassword("");
+     setUsername("");
+
     }
     catch(err){
-      alert(err.message)
+      console.log(err.message)
+      setEmail("");
+      setPassword("");
     }
   }
 
-  const signInfunction=async(e)=>{
-    e.preventdefault();
+  const signInfunction=async()=>{
+
     try{
       await signInWithEmailAndPassword(auth,email,password);
-      console.log(auth)
+
     }
     catch(err){
       alert(err.message)
@@ -35,7 +47,7 @@ const SignUpScreen = () => {
     <div className='signUpScreen'>
       {signIn?
       <>
-      <form id="signInform">
+      <form id="signInform" onClick={(e)=>e.preventDefault()}>
         <h1>Sign In</h1>
         <input 
             type="email"
@@ -61,7 +73,7 @@ const SignUpScreen = () => {
         <span className='signUpScreen-link'onClick={() => setSignIn(false)} >Sign Up Now</span>
       </h4>
       </>: <>
-            <form id="signUpform">
+            <form id="signUpform"  onClick={(e)=>e.preventDefault()}>
             <h1>Sign up</h1>
             <input 
                 type="text"
@@ -89,7 +101,7 @@ const SignUpScreen = () => {
                 onChange={(e)=>setPassword(e.target.value)}
     
             />
-             <button type="submit" onClick={(e)=>signUpfunction(e)}>Sign Up</button>
+             <button type="submit" onClick={()=>signUpfunction()}>Sign Up</button>
           </form>
           <h4>
             <span className='signUpScreen-gray'>Or have an account?</span>{" "}
