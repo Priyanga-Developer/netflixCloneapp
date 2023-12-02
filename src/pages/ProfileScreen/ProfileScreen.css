@@ -60,3 +60,27 @@
     cursor: pointer;
     border: none;
   }
+
+  @media all and   (max-width: 600px){
+    .profileScreenbody {
+      padding-top: 23%;
+      width: 100%;
+  }
+  .profileScreenInfo{
+    flex-direction: column;
+    justify-content:center;
+    align-items:  center;
+  }
+  .profileScreenInfo>img {
+    height: 50px;
+    width: 50px;
+}
+.profileScreenDetails>h2 {
+  margin-top: 10px;
+}
+.profileScreenbody>h1{
+  font-size: 37px;
+  text-align: center;
+ }
+
+}
