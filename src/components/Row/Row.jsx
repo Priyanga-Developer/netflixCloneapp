@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import movieApi from "../../Api/movieApi"
 import YouTube from "react-youtube"
-import movieTrailer from "movie-trailer"
+import movieTrailer from  "movie-trailer"
 import "./Row.css"
 
 const Row = ({title,fetchUrl,isLargeRow=false}) => {
@@ -31,7 +31,7 @@ const Row = ({title,fetchUrl,isLargeRow=false}) => {
           // https://developers.google.com/youtube/player_parameters
           autoplay: 1,
           host: 'https://www.youtube.com',
-          origin: "http://localhost:3000"
+          origin:window.location.origin
         }
     }
     const handleClick= async(movie)=>{
