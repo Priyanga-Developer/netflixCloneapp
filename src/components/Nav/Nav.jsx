@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import "./Nav.css"
+import logo from "../../assets/logo.png"
 import { Link} from "react-router-dom"
 
 const Nav = () => {
@@ -18,12 +19,12 @@ const Nav = () => {
     window.addEventListener("scroll",transitionNavBar);
     return () => window.removeEventListener("scroll", transitionNavBar);
   })
-
+  // http://assets.stickpng.com/images/580b57fcd9996e24bc43c529.png
   return (
     <nav className={`nav ${show&&"nav-black"}`}>
       <div className='nav-contents'>
         <Link to="/">
-              <img src="http://assets.stickpng.com/images/580b57fcd9996e24bc43c529.png" alt="netflix-logo"
+              <img src={logo} alt="netflix-logo"
               className='nav-logo' />
         </Link>
         <Link to="/profile">

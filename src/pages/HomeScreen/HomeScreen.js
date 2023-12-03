@@ -1,5 +1,4 @@
 import React from 'react'
-import "./HomeScreen.css";
 import requests from '../../Api/request';
 import Nav from "../../components/Nav/Nav"
 import Banner from '../../components/Banner/Banner';

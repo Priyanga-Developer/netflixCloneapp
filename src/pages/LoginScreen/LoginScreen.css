@@ -6,11 +6,12 @@
     background-size: cover; 
 }
 .loginScreen-logo {
-    position: fixed;
-    left: 0;
-    width: 150px;
-    object-fit: contain;
-    padding-left: 20px;
+  position: fixed;
+  left: 13px;
+  top: 26px;
+  width: 150px;
+  object-fit: contain;
+  padding-left: 20px;
   }
   .loginScreen-button{
     position: fixed;
