@@ -5,9 +5,9 @@ import HomeScreen from './pages/HomeScreen/HomeScreen';
 import ProfileScreen from './pages/ProfileScreen/ProfileScreen';
 import LoginScreen from './pages/LoginScreen/LoginScreen';
 import {useDispatch, useSelector} from"react-redux";
-import { selectUser } from './features/userSlice';
+import { selectUser } from './features/users/userSlice';
 import { onAuthStateChanged } from 'firebase/auth';
-import { login,logout } from './features/userSlice';
+import { login,logout } from './features/users/userSlice';
 import { auth } from './firebase/config';
 
 function App() {

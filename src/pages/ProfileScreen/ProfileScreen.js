@@ -3,7 +3,7 @@ import "./ProfileScreen.css"
 import Nav from "../../components/Nav/Nav"
 import Plans from '../../components/Plans/Plans'
 import {useSelector} from "react-redux"
-import {selectUser} from "../../features/userSlice"
+import {selectUser} from "../../features/users/userSlice"
 import {signOut} from "firebase/auth"
 import {auth} from "../../firebase/config"
 
