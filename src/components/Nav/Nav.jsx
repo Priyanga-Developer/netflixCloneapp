@@ -18,7 +18,7 @@ const Nav = () => {
   useEffect(()=>{
     window.addEventListener("scroll",transitionNavBar);
     return () => window.removeEventListener("scroll", transitionNavBar);
-  })
+  },[])
   // http://assets.stickpng.com/images/580b57fcd9996e24bc43c529.png
   return (
     <nav className={`nav ${show&&"nav-black"}`}>
