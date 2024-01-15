@@ -8,36 +8,28 @@ const SignUpScreen = () => {
   const [email,setEmail]=useState("");
   const [password,setPassword] =useState("");
   const [username,setUsername]=useState("");
- 
-
   
-  const signUpfunction=async()=>{
-  
+  const signUpfunction=async()=>{ 
     try{
-       await createUserWithEmailAndPassword(auth,email,password);
-       
+       await createUserWithEmailAndPassword(auth,email,password);    
       await updateProfile(auth.currentUser,{
         displayName: username
        })
-     
- 
      setEmail("");
      setPassword("");
      setUsername("");
 
     }
     catch(err){
-      console.log(err.message)
+      alert(err.message)
       setEmail("");
       setPassword("");
     }
   }
 
   const signInfunction=async()=>{
-
     try{
       await signInWithEmailAndPassword(auth,email,password);
-
     }
     catch(err){
       alert(err.message)

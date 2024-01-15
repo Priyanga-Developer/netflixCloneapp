@@ -11,7 +11,6 @@ const Banner = () => {
 
   useEffect(()=>{
     const fetchData=async()=>{
-
       try{
         const response =await movieApi.get(requests.fetchNetflixOriginals);
         setMovie(response.data.results[
@@ -19,7 +18,6 @@ const Banner = () => {
               ]
           );
        return response;
-
       }
       catch(err){
         console.log(err.message);
