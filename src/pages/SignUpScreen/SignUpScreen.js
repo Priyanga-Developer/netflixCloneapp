@@ -18,7 +18,6 @@ const SignUpScreen = () => {
      setEmail("");
      setPassword("");
      setUsername("");
-
     }
     catch(err){
       alert(err.message)
